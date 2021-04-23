@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brickWallPrefab: {fileID: 5752841450224783738, guid: 884caa2fd3bafad438e5130af4fc74c2, type: 3}
+  spikePrefab: {fileID: 6830386777568511264, guid: 64bbb7be4b8e9a24280a22bda0d5283f, type: 3}
+  lavaPrefab: {fileID: 4026662638358181435, guid: b65a963accaded542b59eb938419ad5a, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

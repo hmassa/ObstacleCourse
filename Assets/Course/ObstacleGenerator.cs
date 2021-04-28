@@ -105,6 +105,6 @@ public class ObstacleGenerator : MonoBehaviour
         var lavaObj = Instantiate(lavaPrefab);
         lavaObj.transform.position = new Vector3(0, 0.26f, zLoc);
         var bridge = lavaPrefab.transform.GetChild(0).gameObject;
-        bridge.transform.position = new Vector3(bridgeLoc, 1.75f, 10);
+        bridge.transform.position = new Vector3(bridgeLoc, 2.5f, 10);
     }
 }

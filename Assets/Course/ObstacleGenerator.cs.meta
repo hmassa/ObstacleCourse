@@ -3,7 +3,10 @@ guid: 21fe8485bd5165848b23d731e4c03290
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - brickWallPrefab: {fileID: 5752841450224783738, guid: 884caa2fd3bafad438e5130af4fc74c2, type: 3}
+  - spikePrefab: {fileID: 8021033384630641199, guid: 64bbb7be4b8e9a24280a22bda0d5283f, type: 3}
+  - lavaPrefab: {fileID: 4026662638358181435, guid: b65a963accaded542b59eb938419ad5a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

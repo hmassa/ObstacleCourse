@@ -51,7 +51,7 @@ public class ObstacleGenerator : MonoBehaviour
 
     private void GenerateBrickWall(int zLoc)
     {
-        var leftWallLength = Random.Range(0f, 13f);
+        var leftWallLength = Random.Range(0f, 12f);
         var maxOpening = Mathf.Min(7, TrackWidth - leftWallLength);
         var opening = Random.Range(2, maxOpening);
         var rightWallLength = TrackWidth - opening - leftWallLength;

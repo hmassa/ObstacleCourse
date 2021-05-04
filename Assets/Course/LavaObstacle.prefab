@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4026662638358181432}
   - component: {fileID: 4026662638358181433}
   - component: {fileID: 4026662638358181434}
+  - component: {fileID: 1155756576407580197}
   m_Layer: 0
   m_Name: LavaObstacle
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9079796957146994f8dc711daa91f6fd, type: 2}
+  - {fileID: 2100000, guid: 2b531561eede9b4498c69a88eeb3cd61, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +98,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1155756576407580197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026662638358181435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d28cb150ad86f4a8100312a4aea7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uvAnimationRate: {x: 0.05, y: 0}
+  textureName: _MainTex
 --- !u!64 &6229621092406768309
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -136,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac1fe9b910eadca42bc3cff643c275b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.94740623
+      value: -1.0718076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac1fe9b910eadca42bc3cff643c275b5, type: 3}
       propertyPath: m_LocalPosition.y

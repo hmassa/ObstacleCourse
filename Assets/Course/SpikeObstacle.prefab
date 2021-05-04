@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7213570270723127445}
   - component: {fileID: 6031556183407081264}
   - component: {fileID: 8381360730181125114}
-  - component: {fileID: -7128925950917999408}
+  - component: {fileID: 5625925990162847567}
   m_Layer: 0
   m_Name: SpikeObstacle
   m_TagString: Untagged
@@ -82,14 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!154 &-7128925950917999408
-TerrainCollider:
+--- !u!64 &5625925990162847567
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8021033384630641199}
   m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_TerrainData: {fileID: 0}
-  m_EnableTreeColliders: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3613567641014311022, guid: fdbbdba6085e1f142bae1c6aea280958, type: 3}

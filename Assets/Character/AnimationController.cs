@@ -1,11 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AnimationController : MonoBehaviour
 {
     private Animator _animator;
     public Rigidbody body;
+    public Text deathcounter;
+
+    IEnumerator DeathScene()
+    {
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("SampleScene");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +33,11 @@ public class AnimationController : MonoBehaviour
         var flatSpeed = flatVelocity.magnitude;
         var bodyHeight = body.position.y;
         bool isRunning = flatSpeed > 0.001f;
-
         bool isFalling = bodyHeight < .05f;
+        bool nextLevel = bodyHeight < -20f;
+        bool isDead = deathcounter.text == "00";
+
         _animator.SetBool("isFalling", isFalling);
-
-
         _animator.SetBool("isRunning", isRunning);
 
         if (isRunning)
@@ -44,6 +56,17 @@ public class AnimationController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             _animator.SetTrigger("slide");
+
+        }
+        if(nextLevel)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        if (isDead)
+        {
+            _animator.SetTrigger("death");
+
+            StartCoroutine(DeathScene());
 
         }
     }

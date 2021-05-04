@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,10 +10,28 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float acceleration = 25;
     public float jumpVelocity = 7;
+    public Transform capsuleTransform;
+    public Text countdowntext;
+
+
+    IEnumerator Roll()
+    {
+
+        var temp = new Vector3(capsuleTransform.localScale.x, 0.4f, capsuleTransform.localScale.z);
+        var normal = new Vector3(capsuleTransform.localScale.x, 0.9f, capsuleTransform.localScale.z);
+
+        capsuleTransform.localScale = temp;
+
+        yield return new WaitForSeconds(2f);
+
+        capsuleTransform.localScale = normal;
+
+    }
     // Start is called before the first frame update
     void Start()
     {
         _body = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -30,22 +50,29 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         var targetVelocity = Vector3.zero;
+        bool isCountingDown = countdowntext.text == "GO";
 
-        if (Input.GetKey(KeyCode.W))
+
+        if (Input.GetKey(KeyCode.W) && isCountingDown)
         {
             targetVelocity.z += 1;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && isCountingDown)
         {
             targetVelocity.x -= 1;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && isCountingDown)
         {
             targetVelocity.z -= 1;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && isCountingDown)
         {
             targetVelocity.x += 1;
+        }
+        if (Input.GetKey(KeyCode.Return) && isCountingDown)
+        {
+            StartCoroutine(Roll());
+
         }
 
         targetVelocity = targetVelocity.normalized;

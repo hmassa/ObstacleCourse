@@ -502,6 +502,7 @@ MonoBehaviour:
   brickWallPrefab: {fileID: 5752841450224783738, guid: 884caa2fd3bafad438e5130af4fc74c2, type: 3}
   spikePrefab: {fileID: 8021033384630641199, guid: 64bbb7be4b8e9a24280a22bda0d5283f, type: 3}
   lavaPrefab: {fileID: 4026662638358181435, guid: b65a963accaded542b59eb938419ad5a, type: 3}
+  track: {fileID: 1072264004}
 --- !u!1 &693996171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1253,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2097530107}
     - target: {fileID: 8167297705727700702, guid: c19fe638219e8a347ab02ba7d4c89ca0, type: 3}
+      propertyPath: levelCounter
+      value: 
+      objectReference: {fileID: 282479530}
+    - target: {fileID: 8167297705727700702, guid: c19fe638219e8a347ab02ba7d4c89ca0, type: 3}
       propertyPath: levelDisplay
       value: 
       objectReference: {fileID: 282479530}
@@ -1480,7 +1485,6 @@ MonoBehaviour:
   countdownDisplay: {fileID: 1742965001}
   deathTime: 30
   deathDisplay: {fileID: 2097530107}
-  level: 1
 --- !u!1 &1970210462
 GameObject:
   m_ObjectHideFlags: 0

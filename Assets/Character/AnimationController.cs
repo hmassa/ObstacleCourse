@@ -10,6 +10,8 @@ public class AnimationController : MonoBehaviour
     private Animator _animator;
     public Rigidbody body;
     public Text deathcounter;
+    public Text levelCounter;
+    public ScoreScript score;
 
     IEnumerator DeathScene()
     {
@@ -22,6 +24,8 @@ public class AnimationController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        score = new ScoreScript();
+        levelCounter.text = "Level: " + score.get().ToString();
     }
 
     // Update is called once per frame
@@ -60,10 +64,12 @@ public class AnimationController : MonoBehaviour
         }
         if(nextLevel)
         {
+            score.increment();
             SceneManager.LoadScene("SampleScene");
         }
         if (isDead)
         {
+            score.reset();
             _animator.SetTrigger("death");
 
             StartCoroutine(DeathScene());

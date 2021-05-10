@@ -7,20 +7,34 @@ public class ObstacleGenerator : MonoBehaviour
     public GameObject brickWallPrefab;
     public GameObject spikePrefab;
     public GameObject lavaPrefab;
+    public GameObject track;
+
+    public ScoreScript score;
 
     private int _lastObstaclePosition = 0;
-    private const int ObstacleSpacing = 20;
-    private const float TrackWidth = 14f;
-    private const float TrackWallX = TrackWidth / 2;
-    private const float TrackLength = 190f;
+    private int _obstacleSpacing;
+    private float _trackLength;
+    private const float TrackWidth = 14;
+    private const float TrackWallX = 7;
 
     // Start is called before the first frame update
     void Start()
     {
+        _trackLength = track.GetComponent<Collider>().bounds.size.z - 10;
 
-        for (int i = ObstacleSpacing; i < TrackLength; i += ObstacleSpacing)
+        score = new ScoreScript();
+        _obstacleSpacing = 35 - score.get()*5;
+
+        if (_obstacleSpacing < 5)
         {
-            var zLoc = _lastObstaclePosition + ObstacleSpacing;
+            _obstacleSpacing = 5;
+        }
+
+        int startPos = 10 + _obstacleSpacing;
+
+        for (int i = startPos; i < _trackLength; i += _obstacleSpacing)
+        {
+            var zLoc = _lastObstaclePosition + _obstacleSpacing;
             _lastObstaclePosition = zLoc;
 
             int obstactleType = Random.Range(0, 4);

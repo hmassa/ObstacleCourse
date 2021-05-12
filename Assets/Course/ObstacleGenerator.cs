@@ -118,7 +118,25 @@ public class ObstacleGenerator : MonoBehaviour
 
         var lavaObj = Instantiate(lavaPrefab);
         lavaObj.transform.position = new Vector3(0, 0.26f, zLoc);
+        
         var bridge = lavaPrefab.transform.GetChild(0).gameObject;
         bridge.transform.position = new Vector3(bridgeLoc, 2.5f, 10);
+
+        Debug.Log(bridge.transform.lossyScale.ToString());
+
+        var xPos = bridgeLoc + 3f + (TrackWallX - bridgeLoc - 3f)/2;
+        var xSize = (TrackWallX - bridgeLoc - 3f) / lavaObj.transform.lossyScale.x;
+
+        var leftWall = lavaPrefab.transform.GetChild(2).gameObject;
+        leftWall.transform.localScale = new Vector3(xSize, 4f, 10f);
+        leftWall.transform.position = new Vector3(xPos, 2f, 10f);
+
+        xPos = -TrackWallX + (TrackWallX + bridgeLoc - 3f) / 2;
+        xSize = (TrackWallX + bridgeLoc - 3f)/lavaObj.transform.lossyScale.x;
+
+        var rightWall = lavaPrefab.transform.GetChild(1).gameObject;
+        rightWall.transform.localScale = new Vector3(xSize, 4f, 10f);
+        rightWall.transform.position = new Vector3(xPos, 2f, 10f);
+
     }
 }

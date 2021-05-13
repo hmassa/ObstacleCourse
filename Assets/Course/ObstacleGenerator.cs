@@ -122,8 +122,6 @@ public class ObstacleGenerator : MonoBehaviour
         var bridge = lavaPrefab.transform.GetChild(0).gameObject;
         bridge.transform.position = new Vector3(bridgeLoc, 2.5f, 10);
 
-        Debug.Log(bridge.transform.lossyScale.ToString());
-
         var xPos = bridgeLoc + 3f + (TrackWallX - bridgeLoc - 3f)/2;
         var xSize = (TrackWallX - bridgeLoc - 3f) / lavaObj.transform.lossyScale.x;
 
